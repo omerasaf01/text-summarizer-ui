@@ -9,7 +9,10 @@ export function cn(...inputs: ClassValue[]) {
 export async function summarizeText(text: string): Promise<string> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, ""); // sondaki / karakterini sil
-    const endpoint = "/tools/summarizer";
+    let endpoint = "/tools/summarizer";
+
+    if (!baseUrl == undefined)
+      endpoint = "/api/tools/summarizer"; 
 
     console.log("Calling API:", `${baseUrl}${endpoint}`);
 
