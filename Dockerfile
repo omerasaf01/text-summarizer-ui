@@ -44,4 +44,4 @@ USER nextjs
 EXPOSE 3001
 
 # Command to start the application
-CMD ["npm", "start"]
+CMD CMD ["npm", "start", "--", "-p", "3001"]
