@@ -14,7 +14,7 @@ export async function summarizeText(text: string): Promise<string> {
     if (baseUrl == undefined)
       endpoint = "/api/tools/summarizer"; 
 
-    console.log("Calling API:", `${baseUrl}${endpoint}`);
+    console.log("Calling API:", `https://summarizer.scholarcircle.org/api/tools/summarizer`);
 
     let response = await axios.post(`${baseUrl}${endpoint}`, { text });
 
