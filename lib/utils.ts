@@ -11,7 +11,7 @@ export async function summarizeText(text: string): Promise<string> {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, ""); // sondaki / karakterini sil
     let endpoint = "/tools/summarizer";
 
-    if (!baseUrl == undefined)
+    if (baseUrl == undefined)
       endpoint = "/api/tools/summarizer"; 
 
     console.log("Calling API:", `${baseUrl}${endpoint}`);
